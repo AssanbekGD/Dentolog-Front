@@ -9,6 +9,7 @@ import Queue from '/imports/ui/queue/Queue';
 import Treatment from '/imports/ui/treatment/Treatment';
 import Registrar from '/imports/ui/registrar/Registrar';
 import History from '/imports/ui/history/History';
+import Resources from '/imports/ui/resources/Resources';
 import  Storage from '/imports/ui/storage/Storage';
 
 export default class Layout extends Component {
@@ -56,6 +57,7 @@ export default class Layout extends Component {
                   <Route path="/registrar" component={Registrar} />
                   <Route path="/treatment" component={Treatment} />
                   <Route path="/history" component={History} />
+                  <Route path="/resources" component={Resources} />
                   <Route path="/storage" component={Storage} />
                 </Switch>
               </Segment>

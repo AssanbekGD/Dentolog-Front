@@ -4,7 +4,6 @@ import { Item,Form, Image,Header,Button,Segment,Table } from 'semantic-ui-react'
 export default class Storage extends Component {
   render() {
     return <div>
-      <div>
 
   <Form>
     <Form.Group widths="equal">
@@ -68,7 +67,7 @@ export default class Storage extends Component {
   </Table.Header>
  </Table>
 <Form.Button>Заявка на приобретение</Form.Button>
-</div>
+
 </div>
   }
 }
