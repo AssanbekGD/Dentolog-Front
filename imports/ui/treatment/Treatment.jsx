@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import { Item,Form, Image,Header,Button,Segment } from 'semantic-ui-react';
 
+const appealOptions = [
+  { key: 'appeal', value: 'appeal', text: 'Боль' },
+  { key: 'appeal', value: 'appeal', text: 'Кровь' },
+  { key: 'appeal', value: 'appeal', text: 'Гной' },
+];
+
+const diagnosisOptions = [
+  { key: 'diagnos1', value: 'diagnos1', text: 'Адентия' },
+  { key: 'diagnos2', value: 'diagnos2', text: 'Абсцесс околочелюстной' },
+  { key: 'diagnos3', value: 'diagnos3', text: 'Аллергический стоматит (АС)' },
+    { key: 'diagnos4', value: 'diagnos4', text: 'Альвеолит' },
+      { key: 'diagnos5', value: 'diagnos5', text: 'Анкилоз ВНЧС (АВНЧС)' },
+        { key: 'diagnos6', value: 'diagnos6', text: 'Вывих зуба' },
+          { key: 'diagnos7', value: 'diagnos7', text: 'Галитоз' },
+];
+
+
 export default class Treatment extends Component {
   render() {
     return <div>
@@ -47,16 +64,16 @@ export default class Treatment extends Component {
 <Form>
   <Form.Group widths="equal">
     <Form.Dropdown
-      placeholder="Выберите жалобу"
+      placeholder="Обращение"
       search
       selection
-      options
-    />
+      options={appealOptions}
+        />
     <Form.Dropdown
-      placeholder="Выберите жалобу"
+      placeholder="Диагноз"
       search
       selection
-      options
+      options={diagnosisOptions}
     />
   </Form.Group>
   <Form.Group  widths="equal">
@@ -139,9 +156,8 @@ export default class Treatment extends Component {
 <Form.Group>
   <Form.Button>+ Добавить лечение</Form.Button>
 </Form.Group>
-<Button class="ui right floated button">Сохранить</Button>
 </Form>
-
+<Button>Сохранить</Button>
 </div>
 </div>
   }

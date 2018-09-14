@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
 import { Item,Form, Image,Header,Button,Segment,Table } from 'semantic-ui-react';
 
+const yearOptions = [
+  { key: '2018', value: '2018', text: '2018' },
+  { key: '2019', value: '2019', text: '2019' },
+  { key: '2020', value: '2020', text: '2020' },
+];
+
+const monthsOptions = [
+  { key: 'January', value: 'January', text: 'Январь' },
+  { key: 'February', value: 'February', text: 'Февраль' },
+  { key: 'March', value: 'March', text: 'Март' },
+      { key: 'April', value: 'April', text: 'Апрель' },
+        { key: 'May', value: 'May', text: 'Май' },
+          { key: 'June', value: 'June', text: 'Июнь' },
+            { key: 'July', value: 'July', text: 'Июль' },
+              { key: 'August', value: 'August', text: 'Август' },
+                { key: 'September', value: 'September', text: 'Сентябрь' },
+                  { key: 'October', value: 'October', text: 'Октябрь' },
+                  { key: 'Nevember', value: 'Nevember', text: 'Ноябрь' },
+                  { key: 'December', value: 'December', text: 'Декабрь' },
+];
+
+const departmentOptions = [
+  { key: 'Therapy', value: 'Therapy', text: 'Терапия' },
+  { key: 'Surgery', value: 'Surgery', text: 'Хирургия' },
+  { key: 'Periodontology', value: 'Periodontology', text: 'Пародонтология' },
+  { key: 'Orthopedic', value: 'Orthopedic', text: 'Ортопедическая' },
+];
+
 export default class Storage extends Component {
   render() {
     return <div>
@@ -17,7 +45,7 @@ export default class Storage extends Component {
         placeholder="Отделение"
         search
         selection
-        options
+        options={departmentOptions}
       />
     </Form.Group>
 
@@ -26,13 +54,13 @@ export default class Storage extends Component {
           placeholder="Год"
           search
           selection
-          options
+          options={yearOptions}
         />
         <Form.Dropdown
           placeholder="Месяц"
           search
           selection
-          options
+          options={monthsOptions}
         />
         <Form.Input
           placeholder="От"
