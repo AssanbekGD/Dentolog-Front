@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Item,Form, Image,Header,Button,Segment,Table } from 'semantic-ui-react';
 
+const filterOptions = [
+  { key: 'filter1', value: 'filter1', text: 'Имя' },
+  { key: 'filter2', value: 'filter2', text: 'Фамилия' },
+
+];
+
 export default class Resources extends Component {
   render() {
     return <div>
@@ -15,7 +21,7 @@ export default class Resources extends Component {
               placeholder="Фильтр"
               search
               selection
-              options />
+              options={filterOptions} />
           </Form.Group>
 
        <Table celled>

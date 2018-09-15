@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Item,Form, Image,Header,Button,Segment } from 'semantic-ui-react';
+import { Item,Form, Image,Header,Button,Segment,Menu,Grid } from 'semantic-ui-react';
+import { Route, Link, Switch } from 'react-router-dom';
+import  PatientHistory from '/imports/ui/patientHistory/PatientHistory';
 
 const appealOptions = [
   { key: 'appeal', value: 'appeal', text: 'Боль' },
@@ -19,6 +21,24 @@ const diagnosisOptions = [
 
 
 export default class Treatment extends Component {
+  state = { activeItem: 'home' };
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  renderMenuItem(name, displayName) {
+    const url = '/' + name;
+    return (
+      <Menu.Item
+        as={Link}
+        to={url}
+        name={name}
+        active={this.state.activeItem === name}
+        onClick={this.handleItemClick}
+      >
+        {displayName}
+      </Menu.Item>
+    );
+  }
+
   render() {
     return <div>
       <div>
@@ -50,9 +70,19 @@ export default class Treatment extends Component {
 </div>
 </div>
         </div>
-          <Button >
-            История болезни пациента
-          </Button>
+        <Grid>
+          <Grid.Column width={3}>
+            <Menu vertical>
+              {this.renderMenuItem('patientHistory', 'История болезней')}
+            </Menu>
+          </Grid.Column>
+          <Grid.Column width={13}>
+             <Switch>
+                <Route path="/patientHistory/PatientHistory" component={PatientHistory} />
+              </Switch>
+          </Grid.Column>
+        </Grid>
+
       </div>
     </div>
 </Item>

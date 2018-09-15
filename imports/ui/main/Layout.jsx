@@ -11,6 +11,7 @@ import Registrar from '/imports/ui/registrar/Registrar';
 import History from '/imports/ui/history/History';
 import Resources from '/imports/ui/resources/Resources';
 import  Storage from '/imports/ui/storage/Storage';
+import  Docs from '/imports/ui/docs/Docs';
 
 export default class Layout extends Component {
   state = { activeItem: 'home' };
@@ -59,6 +60,7 @@ export default class Layout extends Component {
                   <Route path="/history" component={History} />
                   <Route path="/resources" component={Resources} />
                   <Route path="/storage" component={Storage} />
+                  <Route path="/docs" component={Docs} />
                 </Switch>
               </Segment>
             </Grid.Column>
